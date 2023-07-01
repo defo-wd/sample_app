@@ -1,13 +1,13 @@
 class ListsController < ApplicationController
   def new
-    @list =list.new
+    @list =List.new
   end
-  def create 
+  def create
   list = list.new(list_params)
   list.save
   redirect_to '/top'
   end
-  
+
   def index
   end
 
@@ -16,7 +16,7 @@ class ListsController < ApplicationController
 
   def edit
   end
-  
+
   def list_params
     params.require(:list).permit(title, :body)
   end
